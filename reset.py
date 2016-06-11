@@ -20,6 +20,7 @@ def main():
 		cursor = con.cursor()
 	except:
 		eprint("ERROR: could not connect to database " + str(sys.argv[1]))
+		sys.exit()
 	cursor.execute('DELETE from fight')
 	con.commit()
 	con.close()
