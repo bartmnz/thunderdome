@@ -19,7 +19,7 @@ def main():
     try:
     	con, cursor = md.connect(sys.argv[1])
     except:
-        eprint("ERROR: could not connect to database "+ str(database))
+        eprint("ERROR: could not connect to database "+ str(sys.argv[1]))
         sys.exit()
     #populate list of players
     dude_list = md.DudeList(con, cursor)
