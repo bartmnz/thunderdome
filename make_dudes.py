@@ -10,7 +10,6 @@ def eprint(*args, **kwargs):
 
 class Attack:
     def __init__(self, *args):
-        #print(str(args))    
         if not len(*args) == 5:
             raise AttributeError
         self.name = args[0][0]
@@ -27,7 +26,7 @@ class Attack:
 
 class Dude:
     def __init__(self, *args):
-        #print(str(args[0][0]))
+
         if not len(*args) == 6:
             raise AttributeError
         self.attack_list = [] 
@@ -62,7 +61,6 @@ class Dude:
                 continue
 
     def set_species_data(self, *args):
-        #print(str(args[0][0]))
         if not len(*args) == 4:
             raise AttributeError
         try:
@@ -206,7 +204,7 @@ class DudeList():
         self.cursor.execute(sqlString)
         result = self.cursor.fetchall()
         return result
-        #print (result)
+
     
     def shortest_fight(self):
         subString = '(SELECT *, finish - start as diff from fight) AS new_table'
@@ -382,16 +380,8 @@ class DudeList():
                 values = str(first.my_id) + ', ' + str(second.my_id) + ', ' + "'" + winner[0]+ "'" +', TIMESTAMP '+"' 2016-06-10 00:00:00', TIMESTAMP '2016-06-10 " + time+ "'"
                 sqlString = 'insert into fight (combatant_one, combatant_two, winner, start, finish) values ('+values+');'
                 self.cursor.execute(sqlString)
-                #end = get time
-                #add to table fight (combatant_one, combatant_two, winner, start, finish) 
-                    #value(first, second, winner, start, end)  
-    
-    
 
-
-    
-        
-#     
+ 
 def connect(database):
     u_name = getpass.getuser()
     connect_line = "dbname="+str(database)+" user=" + u_name
