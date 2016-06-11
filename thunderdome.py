@@ -2,6 +2,7 @@
 
 import psycopg2
 import sys
+from make_dudes import eprint
 import make_dudes as md
 
 

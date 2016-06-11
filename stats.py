@@ -3,6 +3,7 @@
 import sys
 import os
 import make_dudes as md
+from make_dudes import eprint 
 import time
 
 

@@ -3,6 +3,7 @@
 import psycopg2
 import sys
 import getpass
+from make_dudes import eprint
 
 def eprint(*args, **kwargs):
 	print(*args, file=sys.stderr, **kwargs)
