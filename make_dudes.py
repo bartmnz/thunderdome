@@ -108,6 +108,10 @@ class Dude:
                 first_hp -= first_half + second_half
                 second.next_attack(timer)
             timer += 1
+#           one day in seconds that's enough already
+            if timer == 86400:
+                first_hp = 0
+                second_hp = 0
         if first_hp > 0:
             return ('One', timer)
         elif second_hp > 0:
@@ -355,7 +359,7 @@ class DudeList():
                 # start = get time
                 try:
                     winner = first.fight(second)
-                    print(str(winner))
+#                    print(str(winner))
                 except ValueError:
                     eprint("ERROR: fight failure")
                     continue
@@ -367,6 +371,7 @@ class DudeList():
                 sqlString = 'insert into fight (combatant_one, combatant_tw' +\
                     'o, winner, start, finish) values (' + values + ');'
                 self.cursor.execute(sqlString)
+        print("Master-Blaster say: Tournament Complete")
 
 
 def connect(database):
